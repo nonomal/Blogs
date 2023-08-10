@@ -1,11 +1,11 @@
 ---
-id: 'fe0d38d9-c773-4dd0-9fdb-6a7d53180e4e'
+id: '3d2d5cc1-6182-48c5-a3f8-adffccdfe69e'
 title: Setup Tailwind CSS with Turborepo!
 slug: setup-tailwind-css-with-turborepo
 summary:
   In this article, I’ll show you how to setup Tailwind CSS with your Turborepo.
-publishedAt: 2022-02-21
-coverImage: https://s3.us-west-2.amazonaws.com/secure.notion-static.com/20597e0f-9bb7-425c-a3b3-22aa32ba5bbc/response.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220728T012723Z&X-Amz-Expires=3600&X-Amz-Signature=225fb998b6959a587830eb7ee165a530bcbcb1fc08cf81b793830127d9d65719&X-Amz-SignedHeaders=host&x-id=GetObject
+date: 2022-02-20T18:30:00.000Z
+coverImage: image-0cd9242b9bf60e261d650683aa023b66cbc79258-2240x1260-png
 canonicalUrl: null
 publicationUrl: null
 ---
@@ -51,7 +51,7 @@ yarn add -DW tailwindcss postcss autoprefixer
 
 Our root package.json would look like:
 
-```json
+```json:package.json
 {
   // ...
   "devDependencies": {
@@ -75,7 +75,7 @@ In our `packages/config`, let’s create `tailwind.config.js` and
 
 - In `tailwind.config.js`, add the following:
 
-```javascript
+```javascript:tailwind.config.js
 module.exports = {
   content: [
     '../../packages/ui/components/**/*.{ts,tsx}',
@@ -85,18 +85,18 @@ module.exports = {
     extend: {}
   },
   plugins: []
-};
+}
 ```
 
 - In `postcss.config.js`, add the following:
 
-```javascript
+```javascript:postcss.config.js
 module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {}
   }
-};
+}
 ```
 
 ---
@@ -110,33 +110,23 @@ module.exports = {
 
 Add the following in the files:
 
-```javascript
-/*
-apps/web/tailwind.config.js
-apps/docs/tailwind.config.js
-packages/ui/tailwind.config.js
-*/
-module.exports = require('config/tailwind.config');
+```javascript:{apps,packages}/{web,docs,ui}/tailwind.config.js
+module.exports = require('config/tailwind.config')
 ```
 
-```javascript
-/*
-apps/web/postcss.config.js
-apps/web/postcss.config.js
-packages/ui/postcss.config,js
-*/
-module.exports = require('config/postcss.config');
+```javascript:{apps,packages}/{web,docs,ui}/postcss.config.js
+module.exports = require('config/postcss.config')
 ```
 
 Lastly, in our `next.config.js` for both `web` and `docs` add this if it’s not
 already present:
 
-```javascript
-const withTM = require('next-transpile-modules')(['ui']);
+```javascript:next.config.js
+const withTM = require('next-transpile-modules')(['ui'])
 
 module.exports = withTM({
   reactStrictMode: true
-});
+})
 ```
 
 ---

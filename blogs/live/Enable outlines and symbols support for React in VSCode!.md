@@ -1,12 +1,12 @@
 ---
-id: 'ec4f5c44-e93a-4878-8122-b4a1d11df27f'
+id: '2204610e-50bf-48ca-8d45-9a0c2a6528cb'
 title: Enable outlines and symbols support for React in VSCode!
 slug: vs-code-extension-that-enable-symbols-and-outlines-support-for-your-react-files
 summary:
   This is a simple extension that shows the symbols and outlines for a React
   file.
-publishedAt: 2021-12-04
-coverImage: https://s3.us-west-2.amazonaws.com/secure.notion-static.com/effe4bf4-8bd9-46c7-80ac-627afa89a09c/response.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220728T012723Z&X-Amz-Expires=3600&X-Amz-Signature=eab3ab1599f91e64702837588236ae25536788b52abf264f166629387ebb1bc0&X-Amz-SignedHeaders=host&x-id=GetObject
+date: 2021-12-03T18:30:00.000Z
+coverImage: null
 canonicalUrl: null
 publicationUrl: null
 ---
